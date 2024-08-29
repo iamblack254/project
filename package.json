@@ -1,0 +1,22 @@
+{
+  "name": "harmony-gates-website",
+  "version": "1.0.0",
+  "description": "A website for Harmony Gates consultancy services.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": []
+}

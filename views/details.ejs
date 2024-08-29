@@ -1,0 +1,183 @@
+<%- include('partials/header') %>
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="animate__animated animate__fadeInUp"><%= property.name %></h2>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>Property Details</li>
+        </ol>
+      </div>
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <section id="portfolio-details" class="portfolio-details" style="color:blue;">
+    <div class="">
+      <div class="portfolio-details-slider swiper">
+        <% property.images.forEach(image => { %>
+          <div class="swiper-slide" style="height: 100vh; background-image: url(<%= image.url %>);">
+            <h3><%= property.name %></h3>
+          </div>
+        <% }) %>
+      </div>
+
+      <div class="row gy-4">
+        <div class="animate__animated animate__fadeInDown portfolio-info">
+          <div class="portfolio-description">
+            <div style="padding: 0 3REM;">
+              <h6><i class="bi bi-building"></i>Welcome to <%= property.name %></h6>
+              <hr>
+              <h1><%= property.title %></h1>
+              <p style="font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: black; padding: 1rem 7px; font-size: 1rem;">
+                <%= property.description %>
+              </p>
+              <div style="padding: 0 10%;">
+                <div class="row">
+                  <% property.details.forEach(detail => { %>
+                    <div class="col-12 col-md-6 mb-4">
+                      <div class="p-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="<%= detail.iconColor %>">
+                          <path d="<%= detail.iconPath %>"/>
+                        </svg>
+                        <h3><%= detail.text %></h3>
+                      </div>
+                    </div>
+                  <% }) %>
+                  <div class="col-12 d-flex justify-content-center">
+                    <a style="width: 14rem; background-color: rgb(48, 51, 80); font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 1.2rem; color:white;" href="#" class="btn">Enquire</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="image">
+      <img style="width: 100%; height: 678px; object-fit: cover; object-position: 30% 50%;" src="<%= property.additionalImage %>">
+    </div>
+
+    <br>
+    <div id="first">
+      <div id="title" style="display: inline-block; padding: 2px 3%; color: black;">
+        <h5><%= property.curatedTitle %></h5>
+        <hr>
+        <p><%= property.retailSpaceDescription %></p>
+      </div>
+    </div>
+    <br><br>
+
+    <div class="">
+      <div class="card mb-3 card-custom">
+        <div class="row no-gutters">
+          <% property.interiorImages.forEach(image => { %>
+            <div class="col-md-4">
+              <img src="<%= image.url %>" class="card-img" alt="Interior Design">
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="">
+        <div style="color: black;" class="d-flex justify-content-between">
+          <h3><%= property.phaseOneTitle %></h3>
+        </div>
+        <div class="mt-4" style="max-height: 60vh; width: 98%;">
+          <div class="row h-100">
+            <!-- Text Div -->
+            <div class="col-md-6 d-flex align-items-center">
+              <div style="padding: 13% 4rem 0; color: black;">
+                <h2><%= property.twoBedroomsTitle %></h2>
+                <p><%= property.twoBedroomsDescription %></p>
+              </div>
+            </div>
+            <!-- Image Div -->
+            <div class="col-md-6 d-flex align-items-center">
+              <img style="width: 110%; height: 364px; object-fit: cover; object-position: 50% 50%;" src="<%= property.twoBedroomsImage %>" class="img-fluid" alt="Example Image">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4" style="max-height: 60vh; width: 98%; padding: 2rem 1rem; margin: 2rem 1rem;">
+        <div class="row h-100">
+          <!-- Image Div -->
+          <div class="col-md-6 d-flex align-items-center">
+            <img style="width: 100%; height: 364px; object-fit: cover; object-position: 50% 50%;" src="<%= property.oneBedroomImage %>" class="img-fluid" alt="Example Image">
+          </div>
+          <!-- Text Div -->
+          <div class="col-md-6 d-flex align-items-center">
+            <div style="color: black;">
+              <h2><%= property.oneBedroomTitle %></h2>
+              <p><%= property.oneBedroomDescription %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="image.">
+        <img style="width: 100%; height: 678px; object-fit: cover; object-position: 30% 50%;" src="<%= property.additionalImage %>">
+      </div>
+
+      <div class="mt-4" style="max-height: 60vh; width: 98%;">
+        <div class="row h-100">
+          <!-- Text Div -->
+          <div class="col-md-6 d-flex align-items-center">
+            <div style="padding: 13% 4rem 0; color: black;">
+              <h2><%= property.rooftopTitle %></h2>
+              <p><%= property.rooftopDescription %></p>
+            </div>
+          </div>
+          <!-- Image Div -->
+          <div class="col-md-6 d-flex align-items-center">
+            <img style="width: 110%; height: 364px; object-fit: cover; object-position: 50% 50%;" src="<%= property.rooftopImage %>" class="img-fluid" alt="Example Image">
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4" style="max-height: 60vh; width: 98%; padding: 2rem 1rem; margin: 2rem 1rem;">
+        <div class="row h-100">
+          <!-- Image Div -->
+          <div class="col-md-6 d-flex align-items-center">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper">
+                <div class="swiper-wrapper align-items-center">
+                  <% property.galleryImages.forEach(image => { %>
+                    <div class="swiper-slide">
+                      <img style="width: 100%; height: 364px; object-fit: cover; object-position: 50% 50%;" src="<%= image.url %>" class="img-fluid" alt="Example Image">
+                    </div>
+                  <% }) %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Text Div -->
+          <div class="col-md-6 d-flex align-items-center">
+            <div style="color: black;">
+              <h2><%= property.uniqueProspectTitle %></h2>
+              <p><%= property.uniqueProspectDescription %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Portfolio Details -->
+
+</main><!-- End #main -->
+
+<!-- Vendor JS Files -->
+<script src="/path/to/vendor/aos/aos.js"></script>
+<script src="/path/to/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/path/to/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/path/to/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="/path/to/js/main.js"></script>
+
+<%- include('partials/footer') %>
