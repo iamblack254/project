@@ -8,12 +8,15 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-
 const path = require('path');
 
 
+// Body parser middleware to handle form submissions
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // Use the contact router
-app.use(contactRouter);
+// app.use(contactRouter);
 //const propertyRoutes = require('./src/routes/propertyRoutes');
 
 //app.use('/api/properties', propertyRoutes);
@@ -34,7 +37,8 @@ app.use(express.static('public'));
 
 // Routes
 app.use('/', require('./routes/index'));
-//app.use('/admin', require('./src/routes/admin'));
+app.use('/contact', require('./routes/contact'));
+// app.use('/admin', require('./src/routes/admin'));
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

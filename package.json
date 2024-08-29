@@ -4,14 +4,16 @@
   "description": "A website for Harmony Gates consultancy services.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "mongoose": "^8.5.2"
+    "mongoose": "^8.5.2",
+    "nodemon": "^3.1.4"
   },
   "devDependencies": {
     "live-server": "^1.2.1"
