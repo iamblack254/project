@@ -32,7 +32,7 @@ router.post('/email', (req, res) => {
     // Setup email options
     const mailOptions = {
         from: email,
-        to: 'johnicarus2020@gmail.com', // The email address where you want to receive the form data
+        to: 'harmonygates2024@gmail.com', // The email address where you want to receive the form data
         subject: `New Contact Form Submission: ${subject}`,
         text: `You have received a new message from ${name} (${email}):\n\n${message}`
     };
