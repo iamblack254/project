@@ -1,7 +1,8 @@
 // Use the contact routes
 const express = require('express');
 const bodyParser = require('body-parser');
-//const mongoose = require('mongoose');
+const emailRouter = require('./routes/contact');
+const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 dotenv.config();
@@ -9,6 +10,8 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 const path = require('path');
+
+//mongoose connection
 
 
 // Body parser middleware to handle form submissions
@@ -20,6 +23,9 @@ app.use(bodyParser.json());
 //const propertyRoutes = require('./src/routes/propertyRoutes');
 
 //app.use('/api/properties', propertyRoutes);
+// Middleware to parse JSON and URL-encoded form data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 // Set up view engine and views directory
@@ -38,6 +44,7 @@ app.use(express.static('public'));
 // Routes
 app.use('/', require('./routes/index'));
 app.use('/contact', require('./routes/contact'));
+app.use(emailRouter);
 // app.use('/admin', require('./src/routes/admin'));
 
 app.listen(port, () => {
