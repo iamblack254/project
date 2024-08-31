@@ -34,7 +34,7 @@ router.post('/email', (req, res) => {
         from: email,
         to: 'harmonygates2024@gmail.com', // The email address where you want to receive the form data
         subject: `New Contact Form Submission: ${subject}`,
-        text: `You have received a new message from ${name} (${email}):\n\n${message}`
+        text: `You have received a new message from ${name}\n (${email}):\n\n${message}`
     };
 
     // Send email using Nodemailer
