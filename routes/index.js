@@ -26,7 +26,9 @@ router.get('/amalia', (req, res) => {
 router.get('/newrise', (req, res) => {
     res.render('newrise', { title: 'newrise' });
 });
-
+router.get('google932733d65d72e3aa.html', (req, res) => {
+    res.render('google932733d65d72e3aa', { title: 'google932733d65d72e3aa' });
+});
 
 router.get('/blog', (req, res) => {
     res.render('blog', { title: 'Blog' });
