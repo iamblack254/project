@@ -846,56 +846,81 @@
       </div>
 
       <div class="col-lg-6">
-        <form  method="post" action="/contact/email" class="email-form" data-aos="fade-up" data-aos-delay="200">
+        <form id="contact-form" method="POST" class="email-form" data-aos="fade-up" data-aos-delay="200">
           <div class="row gy-4">
-
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-            </div>
-
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-            </div>
-
-            <div class="col-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-            </div>
-
-            <div class="col-12">
-              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-            </div>
-
-            <div class="col-12 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-              <style>
-                .btn-send {
-                    background-color: #007bff;
-                    color: white;
-                    padding: 10px 20px;
-                    border: none;
-                    border-radius: 5px;
-                    font-size: 16px;
-                    cursor: pointer;
-                    transition: background-color 0.3s ease;
-                }
-              
-                .btn-send:hover {
-                    background-color: #0056b3;
-                }
-              
-                .btn-send:active {
-                    background-color: #004494;
-                }
-              </style>
-              
+              <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+              </div>
+              <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+              </div>
+              <div class="col-12">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+              </div>
+              <div class="col-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+              </div>
               <div class="col-12 text-center">
                   <button type="submit" class="btn-send">Send Message</button>
               </div>
-
           </div>
-        </form>
+      </form>
+
+      <style>
+        .btn-send {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+      
+        .btn-send:hover {
+            background-color: #0056b3;
+        }
+      
+        .btn-send:active {
+            background-color: #004494;
+        }
+      </style>
+      
+      <script>
+          document.getElementById('contact-form').addEventListener('submit', function (event) {
+              event.preventDefault(); // Prevent the form from submitting the default way
+      
+              // Extract form data
+              const formData = new FormData(this);
+      
+              // Send data to your backend
+              fetch('/contact/email', {
+                  method: 'POST',
+                  body: JSON.stringify({
+                      name: formData.get('name'),
+                      email: formData.get('email'),
+                      subject: formData.get('subject'),
+                      message: formData.get('message')
+                  }),
+                  headers: {
+                      'Content-Type': 'application/json'
+                  }
+              })
+              .then(response => response.json())
+              .then(data => {
+                  console.log('Success:', data);
+                  // After successfully sending data to your backend, submit the form to FormSubmit
+                  this.action = "https://formsubmit.co/johnicarus2020@gmail.com";
+                  this.submit();
+              })
+              .catch((error) => {
+                  console.error('Error:', error);
+                  document.querySelector('.error-message').textContent = 'An error occurred. Please try again.';
+              });
+          });
+      </script>
+      
       </div><!-- End Contact Form -->
 
     </div>
