@@ -36,9 +36,8 @@
               </div>
   
             </div>
-  
             <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-              <form action="/contact/email" method="post" role="form" class="php-email-form">
+              <form action="contact-form" method="post" role="form" class="email-form">
                 <div class="row">
                   <div class="form-group col-md-6">
                     <label for="name">Your Name</label>
@@ -47,6 +46,10 @@
                   <div class="form-group col-md-6 mt-3 mt-md-0">
                     <label for="name">Your Email</label>
                     <input type="email" class="form-control" name="email" id="email" required>
+                  </div>
+                  <div class="form-group col-md-6 mt-3 mt-md-0">
+                    <label for="tel">your phone number</label>
+                    <input type="tel" class="form-control" name="tel" id="tel" required>
                   </div>
                 </div>
                 <div class="form-group mt-3">
@@ -58,14 +61,45 @@
                   <textarea class="form-control" name="message" rows="10" required></textarea>
                 </div>
                 <div class="my-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
+              
                 </div>
                 <div class="text-center"><button type="submit">Send Message</button></div>
               </form>
+            <script>
+              document.getElementById('contact-form').addEventListener('submit', function (event) {
+                  event.preventDefault(); // Prevent the form from submitting the default way
+          
+                  // Extract form data
+                  const formData = new FormData(this);
+          
+                  // Send data to your backend
+                  fetch('/contact/email', {
+                      method: 'POST',
+                      body: JSON.stringify({
+                          name: formData.get('name'),
+                          email: formData.get('email'),
+                          number: formData.get('tel'),
+                          subject: formData.get('subject'),
+                          message: formData.get('message')
+                      }),
+                      headers: {
+                          'Content-Type': 'application/json'
+                      }
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                      console.log('Success:', data);
+                      // After successfully sending data to your backend, submit the form to FormSubmit
+                      this.action = "https://formsubmit.co/johnicarus2020@gmail.com";
+                      this.submit();
+                  })
+                  .catch((error) => {
+                      console.error('Error:', error);
+                      document.querySelector('.error-message').textContent = 'An error occurred. Please try again.';
+                  });
+              });
+          </script>
             </div>
-  
           </div>
   
         </div>

@@ -854,6 +854,10 @@
               <div class="col-md-6 ">
                   <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
               </div>
+              <div class="col-md-6 ">
+                <input type="tel" class="form-control" name="tel" placeholder="Your Phone Number" required="">
+              </div>
+            
               <div class="col-12">
                   <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
               </div>
@@ -905,6 +909,7 @@
                   body: JSON.stringify({
                       name: formData.get('name'),
                       email: formData.get('email'),
+                      number: formData.get('tel'),
                       subject: formData.get('subject'),
                       message: formData.get('message')
                   }),
