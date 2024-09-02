@@ -5,6 +5,7 @@ const emailRouter = require('./routes/contact');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
+const cors = require('cors');
 dotenv.config();
 
 const app = express();
@@ -18,7 +19,7 @@ const path = require('path');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
+app.use(cors());
 // Use the contact router
 // app.use(contactRouter);
 //const propertyRoutes = require('./src/routes/propertyRoutes');
@@ -46,7 +47,8 @@ app.use(express.static('public'));
  app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff'); // Prevent MIME type sniffing
   res.setHeader('X-Frame-Options', 'DENY'); // Prevent clickjacking
-  res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'"); // Mitigate XSS
+  res.setHeader('Content-Security-Policy', "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;");
+
   next();
 });
 
