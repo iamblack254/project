@@ -18,6 +18,7 @@ const path = require('path');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+
 // Use the contact router
 // app.use(contactRouter);
 //const propertyRoutes = require('./src/routes/propertyRoutes');
@@ -40,6 +41,15 @@ app.use(express.static('public'));
 //mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
  // .then(() => console.log('Connected to the database'))
  //. .catch(err => console.error('Database connection error:', err));
+
+ //middleware to prevent common security threat.
+ app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff'); // Prevent MIME type sniffing
+  res.setHeader('X-Frame-Options', 'DENY'); // Prevent clickjacking
+  res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self'"); // Mitigate XSS
+  next();
+});
+
 
 // Routes
 app.use('/', require('./routes/index'));

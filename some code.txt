@@ -37,3 +37,22 @@
   $contact->add_message( $_POST['message'], 'Message', 10);
 
   echo $contact->send();
+
+
+  // Route to handle subscription form submission
+router.post('/subscribe', async (req, res) => {
+    const { email } = req.body;
+
+    if (!email) {
+        return res.status(400).json({ error: 'Email is required.' });
+    }
+
+    try {
+        
+        console.log('Saved subscribed email:', email);
+        res.status(200).json({ message: 'Subscription successful!' });
+    } catch (error) {
+        console.error('Error saving subscription:', error);
+        res.status(500).json({ error: 'Failed to save subscription.' });
+    }
+});

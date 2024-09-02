@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 
 const subscribedEmailSchema = new mongoose.Schema({
     email: {
@@ -13,4 +13,4 @@ const subscribedEmailSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('SubscribedEmail', subscribedEmailSchema);
+module.exports = mongoose.model('SubscribedEmail', subscribedEmailSchema);*/

@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 
 const contactMessageSchema = new mongoose.Schema({
     name: {
@@ -27,4 +27,4 @@ const contactMessageSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('ContactMessage', contactMessageSchema);
+module.exports = mongoose.model('ContactMessage', contactMessageSchema);*/

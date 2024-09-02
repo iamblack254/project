@@ -12,8 +12,7 @@ router.post('/subscribe', async (req, res) => {
     }
 
     try {
-        const newSubscription = new SubscribedEmail({ email });
-        await newSubscription.save();
+        
         console.log('Saved subscribed email:', email);
         res.status(200).json({ message: 'Subscription successful!' });
     } catch (error) {
@@ -31,8 +30,6 @@ router.post('/email', async (req, res) => {
     }
 
     try {
-        const newMessage = new ContactMessage({ name, email, subject, message });
-        await newMessage.save();
         console.log(`Saved contact message from ${name} (${email})`);
         res.status(200).json({ message: 'Your message has been received. Thank you!' });
     } catch (error) {
