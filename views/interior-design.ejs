@@ -1,5 +1,8 @@
 <%- include('partials/header') %>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text and Overlapping Images</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,28 +13,28 @@
         .container {
             display: flex;
             justify-content: space-between;
-            padding: 40px; /* Increased padding */
-            margin: 30px auto; /* Extended margin */
-            width: 90%; /* Extended width */
+            padding: 40px;
+            margin: 30px auto;
+            width: 90%;
             background-color: #fff;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Increased shadow size */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
         .text-section {
-            width: 50%; /* Increased text section width */
-            padding: 30px; /* Increased padding */
+            width: 50%;
+            padding: 30px;
         }
         .text-section h2 {
             margin-bottom: 20px;
-            font-size: 28px; /* Increased font size */
+            font-size: 28px;
             color: #333;
         }
         .text-section p {
-            font-size: 18px; /* Increased font size */
+            font-size: 18px;
             line-height: 1.7;
             color: #666;
         }
         .image-section {
-            width: 50%; /* Increased image section width */
+            width: 50%;
             position: relative;
         }
         .image-section img {
@@ -39,18 +42,49 @@
             transition: all 0.3s ease;
         }
         .image-section img:nth-child(1) {
-            width: 60%; /* Increased image size */
-            top: 40px; /* Shifted lower */
-            left: 25%; /* Adjusted positioning */
+            width: 60%;
+            top: 40px;
+            left: 25%;
             z-index: 1;
         }
         .image-section img:nth-child(2) {
-            width: 90%; /* Increased second image size */
+            width: 90%;
             top: 0;
             left: 15%;
             z-index: 0;
         }
-    </style> 
+
+        /* Mobile-friendly styling */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+            .text-section, .image-section {
+                width: 100%;
+                padding: 10px;
+            }
+            .image-section img {
+                position: relative;
+                width: 80%;
+                margin: 10px auto;
+                left: 0;
+                top: 0;
+                z-index: 1;
+            }
+            .image-section img:nth-child(2) {
+                width: 100%;
+                margin-top: -50px;
+            }
+            .text-section h2 {
+                font-size: 24px;
+            }
+            .text-section p {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -61,7 +95,7 @@
         </div>
         <div class="image-section">
             <img src="/images/img/1 (10).jpg" alt="Image 1">
-            
+            <img src="/images/img/1 (12).jpg" alt="Image 2">
         </div>
     </div>
 

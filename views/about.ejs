@@ -1,67 +1,162 @@
 <%- include('partials/header') %>
     <main class="main">
-<section id="about">
-        <h1>About Us</h1>
-        <p>Welcome to Harmony Gates Realty, your trusted partner in all things real estate. Our mission is to provide unparalleled services, expert advice and a seamless experience in buying, selling, and managing properties. With years of experience in the industry, we are committed to help you find your dream home or maximize the value of your investments. Our comprehensive suite of services is designed to meet all your real estate needs under one roof, ensuring convenience and efficiency.</p>
-        <img src="/images/img/1 (21).jpg" alt="about us" height="300" width="50%">
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="service">
-            <div>
-                <h3>Interior Design</h3>
-                <p>Transform your living spaces with our professional interior design services. At Harmony Gates realty, we believe that your home should reflect your personality and lifestyle. Our team of skilled designers works closely with you to understand your vision and create spaces that are both beautiful and functional. Whether you're looking to renovate a single room or overhaul your entire home, we provide tailored solutions that suit your taste and budget.
-                 <a href="/services">Learn more about our Interior Design services</a>.</p>
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Harmony Gates Realty</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+    
+            h1, h2, h3 {
+                color: #333;
+                margin-bottom: 15px;
+            }
+    
+            p {
+                color: #555;
+                margin-bottom: 20px;
+            }
+    
+            #about, #services, #why-us {
+                background-color: #fff;
+                padding: 40px;
+                margin: 20px 0;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            }
+    
+            #about img, .service img {
+                width: 50%;
+                height: auto;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+            }
+    
+            #about img:hover, .service img:hover {
+                transform: scale(1.05);
+            }
+    
+            .service {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 30px;
+            }
+    
+            .service:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+    
+            .service div {
+                width: 45%;
+            }
+    
+            ul {
+                margin-top: 20px;
+                padding-left: 20px;
+            }
+    
+            ul li {
+                margin-bottom: 10px;
+            }
+    
+            /* Responsive Styles */
+            @media (max-width: 768px) {
+                .service {
+                    flex-direction: column;
+                    text-align: center;
+                }
+    
+                .service div, .service img {
+                    width: 100%;
+                }
+    
+                #about img {
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+    
+        <section id="about">
+            <h1>About Us</h1>
+            <p>Welcome to Harmony Gates Realty, your trusted partner in all things real estate. Our mission is to provide unparalleled services, expert advice and a seamless experience in buying, selling, and managing properties. With years of experience in the industry, we are committed to help you find your dream home or maximize the value of your investments. Our comprehensive suite of services is designed to meet all your real estate needs under one roof, ensuring convenience and efficiency.</p>
+            <img src="/images/img/1 (21).jpg" alt="about us">
+        </section>
+    
+        <section id="services">
+            <h2>Our Services</h2>
+            
+            <div class="service">
+                <div>
+                    <h3>Interior Design</h3>
+                    <p>Transform your living spaces with our professional interior design services. At Harmony Gates realty, we believe that your home should reflect your personality and lifestyle. Our team of skilled designers works closely with you to understand your vision and create spaces that are both beautiful and functional. Whether you're looking to renovate a single room or overhaul your entire home, we provide tailored solutions that suit your taste and budget.</p>
+                    <a href="/services">Learn more</a>
+                </div>
+                <img src="/images/img/1 (26).jpg" alt="Interior Design">
             </div>
-            <img src="/images/img/1 (26).jpg" alt="Interior Design" height="300" width="50%">
-        </div>
-        <div class="service">
-            <div>
-                <h3>Property Management</h3>
-                <p>Maximize the value of your property with our comprehensive property management services. From tenant screening and placement to maintenance and rent collection, we handle all aspects of property management with the utmost professionalism and care. Our dedicated team ensures your property is well-maintained and your tenants are satisfied, allowing you to enjoy a stress-free investment. 
-                  <a href="/properties">Learn more about our Property Management services</a>.</p>
+    
+            <div class="service">
+                <div>
+                    <h3>Property Management</h3>
+                    <p>Maximize the value of your property with our comprehensive property management services. From tenant screening and placement to maintenance and rent collection, we handle all aspects of property management with the utmost professionalism and care. Our dedicated team ensures your property is well-maintained and your tenants are satisfied, allowing you to enjoy a stress-free investment.</p>
+                    <a href="/properties">Learn more</a>
+                </div>
+                <img src="/images/img/1 (27).jpg" alt="Property Management">
             </div>
-            <img src="/images/img/1 (27).jpg" alt="Property Management" height="300" width="50%">
-        </div>
-        <div class="service">
-            <div>
-                <h3>Property Valuation</h3>
-                <p>Get an accurate assessment of your property's value with our expert property valuation services. Whether you're buying, selling, or refinancing, our certified appraisers provide detailed and reliable valuations for residential and commercial properties. Understanding the true value of your assets is crucial for making informed decisions and maximizing your investment.
-                 <a href="/properties">Learn more about our Property Valuation services</a>.</p>
+    
+            <div class="service">
+                <div>
+                    <h3>Property Valuation</h3>
+                    <p>Get an accurate assessment of your property's value with our expert property valuation services. Whether you're buying, selling, or refinancing, our certified appraisers provide detailed and reliable valuations for residential and commercial properties. Understanding the true value of your assets is crucial for making informed decisions and maximizing your investment.</p>
+                    <a href="/properties">Learn more</a>
+                </div>
+                <img src="/images/img/1 (23).jpg" alt="Property Valuation">
             </div>
-            <img src="/images/img/1 (23).jpg" alt="Property Valuation" height="300" width="50%">
-        </div>
-        <div class="service">
-            <div>
-                <h3>Property Sale</h3>
-                <p>Navigate the complexities of the real estate market with confidence. Our experienced agents guide you through every step of the buying and selling process, from listing your property to closing the deal. We use our extensive market knowledge and negotiation skills to secure the best possible outcome for our clients. Whether you're looking to buy your first home or sell a commercial property, we are here to help.
-                 <a href="/properties">Learn more about our Property Sale services</a>.</p>
+    
+            <div class="service">
+                <div>
+                    <h3>Property Sale</h3>
+                    <p>Navigate the complexities of the real estate market with confidence. Our experienced agents guide you through every step of the buying and selling process, from listing your property to closing the deal. We use our extensive market knowledge and negotiation skills to secure the best possible outcome for our clients. Whether you're looking to buy your first home or sell a commercial property, we are here to help.</p>
+                    <a href="/properties">Learn more</a>
+                </div>
+                <img src="/images/img/1 (29).jpg" alt="Property Sale">
             </div>
-            <img src="/images/img/1 (29).jpg" alt="Property Sale" height="300" width="50%">
-        </div>
-        <div class="service">
-            <div>
-                <h3>Residentials</h3>
-                <p>Discover a wide range of residential properties to suit every lifestyle and budget. From cozy starter homes to luxurious estates, Harmony Gates Realty offers a diverse portfolio of homes, apartments, and condos. Our knowledgeable agents are dedicated to helping you find the perfect place to call home. With our personalized approach and commitment to excellence, your dream home is just a call away.
-                 <a href="/properties">Learn more about our Residential services</a>.</p>
+    
+            <div class="service">
+                <div>
+                    <h3>Residentials</h3>
+                    <p>Discover a wide range of residential properties to suit every lifestyle and budget. From cozy starter homes to luxurious estates, Harmony Gates Realty offers a diverse portfolio of homes, apartments, and condos. Our knowledgeable agents are dedicated to helping you find the perfect place to call home. With our personalized approach and commitment to excellence, your dream home is just a call away.</p>
+                    <a href="/properties">Learn more</a>
+                </div>
+                <img src="/images/img/1 (30).jpg" alt="Residentials">
             </div>
-            <img src="/images/img/1 (30).jpg" alt="Residentials" width="50%" height="300">
-        </div>
-    </section>
-
-    <section id="why-us">
-        <h2>Why Choose Harmony Gates Realty?</h2>
-        <p>At Harmony Gates, we pride ourselves on delivering exceptional service and unmatched expertise. Here are a few reasons why we are the best choice for your real estate needs:</p>
-        <ul>
-            <li>Experience: With years of experience in the industry, we have the knowledge and skills to handle all your real estate needs.</li>
-            <li>Professionalism: Our team is dedicated to providing the highest level of service and professionalism in every interaction.</li>
-            <li>Comprehensive Services: From buying and selling to property management and valuation, we offer a full range of services to meet your needs.</li>
-            <li>Customer Satisfaction: We are committed to ensuring our clients are completely satisfied with our services. Your success is our success.</li>
-            <li>Market Knowledge: Our agents have extensive knowledge of the local market, ensuring you get the best deals and opportunities.</li>
-        </ul>
-    </section>
-
+        </section>
+    
+        <section id="why-us">
+            <h2>Why Choose Harmony Gates Realty?</h2>
+            <p>At Harmony Gates, we pride ourselves on delivering exceptional service and unmatched expertise. Here are a few reasons why we are the best choice for your real estate needs:</p>
+            <ul>
+                <li>Experience: With years of experience in the industry, we have the knowledge and skills to handle all your real estate needs.</li>
+                <li>Professionalism: Our team is dedicated to providing the highest level of service and professionalism in every interaction.</li>
+                <li>Comprehensive Services: From buying and selling to property management and valuation, we offer a full range of services to meet your needs.</li>
+                <li>Customer Satisfaction: We are committed to ensuring our clients are completely satisfied with our services. Your success is our success.</li>
+                <li>Market Knowledge: Our agents have extensive knowledge of the local market, ensuring you get the best deals and opportunities.</li>
+            </ul>
+        </section>
+    
+    </body>
   </main>
 
     <footer id="footer" class="footer position-relative light-background">
