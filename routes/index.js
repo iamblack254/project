@@ -37,8 +37,8 @@ router.get('/blog', (req, res) => {
 router.get('/blog-details', (req, res) => {
     res.render('blog-details', { title: 'Blog-details' });
 });
-router.get('interior-design.html', (req, res) => {
-    res.render('Interior Design', { title: 'Interior Design' });
+router.get('/interior-design', (req, res) => {
+    res.render('interior-design', { title: 'Interior Design' });
 });
 router.get('/developments', (req, res) => {
     res.render('developments', { title: 'Developments' });

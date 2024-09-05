@@ -1,0 +1,125 @@
+<%- include('partials/header') %>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px; /* Increased padding */
+            margin: 30px auto; /* Extended margin */
+            width: 90%; /* Extended width */
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Increased shadow size */
+        }
+        .text-section {
+            width: 50%; /* Increased text section width */
+            padding: 30px; /* Increased padding */
+        }
+        .text-section h2 {
+            margin-bottom: 20px;
+            font-size: 28px; /* Increased font size */
+            color: #333;
+        }
+        .text-section p {
+            font-size: 18px; /* Increased font size */
+            line-height: 1.7;
+            color: #666;
+        }
+        .image-section {
+            width: 50%; /* Increased image section width */
+            position: relative;
+        }
+        .image-section img {
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+        .image-section img:nth-child(1) {
+            width: 60%; /* Increased image size */
+            top: 40px; /* Shifted lower */
+            left: 25%; /* Adjusted positioning */
+            z-index: 1;
+        }
+        .image-section img:nth-child(2) {
+            width: 90%; /* Increased second image size */
+            top: 0;
+            left: 15%;
+            z-index: 0;
+        }
+    </style> 
+</head>
+<body>
+
+    <div class="container">
+        <div class="text-section">
+            <h2>Title 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate sollicitudin lorem, id luctus ipsum tincidunt non.</p>
+        </div>
+        <div class="image-section">
+            <img src="/images/img/1 (10).jpg" alt="Image 1">
+            <img src="/images/img/1 (12).jpg" alt="Image 2">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-section">
+            <h2>Title 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate sollicitudin lorem, id luctus ipsum tincidunt non.</p>
+        </div>
+        <div class="image-section">
+            <img src="https://via.placeholder.com/300" alt="Image 1">
+            <img src="https://via.placeholder.com/300" alt="Image 2">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-section">
+            <h2>Title 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate sollicitudin lorem, id luctus ipsum tincidunt non.</p>
+        </div>
+        <div class="image-section">
+            <img src="https://via.placeholder.com/300" alt="Image 1">
+            <img src="https://via.placeholder.com/300" alt="Image 2">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-section">
+            <h2>Title 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate sollicitudin lorem, id luctus ipsum tincidunt non.</p>
+        </div>
+        <div class="image-section">
+            <img src="https://via.placeholder.com/300" alt="Image 1">
+            <img src="https://via.placeholder.com/300" alt="Image 2">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-section">
+            <h2>Title 5</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate sollicitudin lorem, id luctus ipsum tincidunt non.</p>
+        </div>
+        <div class="image-section">
+            <img src="https://via.placeholder.com/300" alt="Image 1">
+            <img src="https://via.placeholder.com/300" alt="Image 2">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="text-section">
+            <h2>Title 6</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate sollicitudin lorem, id luctus ipsum tincidunt non.</p>
+        </div>
+        <div class="image-section">
+            <img src="https://via.placeholder.com/300" alt="Image 1">
+            <img src="https://via.placeholder.com/300" alt="Image 2">
+        </div>
+    </div>
+
+</body>
+
+                <%- include('partials/footer') %>           
