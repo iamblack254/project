@@ -82,6 +82,36 @@
     }
   }
   </script>
+  <style>
+/* Responsive styles */
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 8px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+}
+
+
+  </style>
 
 </head>
 
@@ -97,7 +127,7 @@
 
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-         <img src="images/img/logo.jpg" alt="">
+         <img src="images/img/logo.jpg" alt="logo" loading="lazy">
         <h1 class="sitename">HARMONY GATES</h1><span>.</span>
       </a>
 
