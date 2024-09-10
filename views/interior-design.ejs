@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text and Overlapping Images</title>
+    <title>Text and Single Image Layout</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,25 +35,17 @@
         }
         .image-section {
             width: 50%;
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .image-section img {
-            position: absolute;
-            transition: all 0.3s ease;
+            width: 100%;
+            height: auto;
+            max-width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .image-section img:nth-child(1) {
-            width: 60%;
-            top: 40px;
-            left: 25%;
-            z-index: 1;
-        }
-        .image-section img:nth-child(2) {
-            width: 90%;
-            top: 0;
-            left: 15%;
-            z-index: 0;
-        }
-
+        
         /* Mobile-friendly styling */
         @media (max-width: 768px) {
             .container {
@@ -65,23 +57,15 @@
                 width: 100%;
                 padding: 10px;
             }
-            .image-section img {
-                position: relative;
-                width: 80%;
-                margin: 10px auto;
-                left: 0;
-                top: 0;
-                z-index: 1;
-            }
-            .image-section img:nth-child(2) {
-                width: 100%;
-                margin-top: -50px;
-            }
             .text-section h2 {
                 font-size: 24px;
             }
             .text-section p {
                 font-size: 16px;
+            }
+            .image-section img {
+                width: 100%;
+                max-width: 100%;
             }
         }
     </style>
@@ -91,70 +75,54 @@
     <div class="container">
         <div class="text-section">
             <h2>Modern Kitchen</h2>
-            <p>Step into a sleek and functional space where minimalist aesthetics meet high-end functionality. Stainless steel appliances blend seamlessly with polished marble countertops, while open shelving and hidden cabinets maximize storage and style. This is where culinary creativity thrives in a modern, sophisticated environment.</p>
+            <p>Step into a sleek and functional space where minimalist aesthetics meet high-end functionality. Stainless steel appliances blend seamlessly with polished marble countertops, while open shelving and hidden cabinets maximize storage and style.</p>
         </div>
         <div class="image-section">
-            <img src="/images/img/1 (10).jpg" alt="Image 1">
-            <img src="/images/img/1 (12).jpg" alt="Image 2">
+            <img src="/images/img/kitchen.jpg" alt="Modern Kitchen">
         </div>
     </div>
 
     <div class="container">
         <div class="text-section">
             <h2>Luxury Living Room</h2>
-            <p>Designed for both comfort and elegance, this living room is a sanctuary of refined taste. A neutral color palette allows for bold accent pieces, while plush seating invites relaxation. Soft lighting and carefully chosen art pieces create a space that feels both luxurious and lived-in.</p>
+            <p>Designed for both comfort and elegance, this living room is a sanctuary of refined taste. A neutral color palette allows for bold accent pieces, while plush seating invites relaxation.</p>
         </div>
         <div class="image-section">
-            <img src="/images/img/1 (10).jpg" alt="Image 1">
-            <img src="/images/img/1 (10).jpg" alt="Image 2">
+            <img src="/images/img/1 (10).jpg" alt="Luxury Living Room">
         </div>
     </div>
 
     <div class="container">
         <div class="text-section">
             <h2>Scandinavian Bedroom</h2>
-            <p>Embrace simplicity and warmth with Scandinavian design, where natural light floods the space and every element serves a purpose. Clean lines, wooden accents, and soft textiles create a peaceful retreat that balances comfort and functionality.</p>
+            <p>Embrace simplicity and warmth with Scandinavian design, where natural light floods the space and every element serves a purpose. Clean lines and wooden accents create a peaceful retreat.</p>
         </div>
         <div class="image-section">
-            <img src="/images/img/1 (10).jpg" alt="Image 1">
-            <img src="/images/img/1 (10).jpg" alt="Image 2">
+            <img src="/images/img/1 (31).jpg" alt="Scandinavian Bedroom">
         </div>
     </div>
 
     <div class="container">
         <div class="text-section">
             <h2>Minimalist Office</h2>
-            <p>This modern workspace is a masterpiece of minimalism, featuring clean lines, neutral tones, and carefully curated furniture that promotes focus and productivity. A clutter-free environment encourages creativity and clarity of thought, making it perfect for working from home.</p>
+            <p>This modern workspace is a masterpiece of minimalism, featuring clean lines, neutral tones, and carefully curated furniture that promotes focus and productivity.</p>
         </div>
         <div class="image-section">
-            <img src="/images/img/1 (10).jpg" alt="Image 1">
-            <img src="/images/img/1 (10).jpg" alt="Image 2">
+            <img src="/images/img/office.jpg" alt="Minimalist Office">
         </div>
     </div>
 
     <div class="container">
         <div class="text-section">
             <h2>Elegant Dining Room</h2>
-            <p>The dining room offers a perfect blend of tradition and modernity, with a grand table as its centerpiece. A chandelier casts a warm glow over stylish seating, while carefully chosen décor elements add a touch of opulence without overpowering the space.</p>
+            <p>The dining room offers a perfect blend of tradition and modernity, with a grand table as its centerpiece. A chandelier casts a warm glow over stylish seating, while carefully chosen décor elements add a touch of opulence.</p>
         </div>
         <div class="image-section">
-            <img src="/images/img/1 (10).jpg" alt="Image 1">
-            <img src="/images/img/1 (10).jpg" alt="Image 2">
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="text-section">
-            <h2>Contemporary Bathroom</h2>
-            <p>Relax and rejuvenate in a bathroom that redefines modern luxury. High-end materials like glass and stone, paired with minimalist design, create a spa-like atmosphere. A walk-in shower and free-standing tub are complemented by sleek fixtures and ambient lighting.</p>
-        </div>
-        <div class="image-section">
-            <img src="/images/img/1 (10).jpg" alt="Image 1">
-            <img src="/images/img/1 (10).jpg" alt="Image 2">
+            <img src="/images/img/dining.jpg" alt="Elegant Dining Room">
         </div>
     </div>
 
 </body>
 
-
-                <%- include('partials/footer') %>           
+<%- include('partials/footer') %>
+          
