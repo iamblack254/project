@@ -26,8 +26,8 @@ router.get('/amalia', (req, res) => {
 router.get('/newrise', (req, res) => {
     res.render('newrise', { title: 'newrise' });
 });
-router.get('google932733d65d72e3aa.html', (req, res) => {
-    res.render('google932733d65d72e3aa', { title: 'google932733d65d72e3aa' });
+router.get('/harmony_gates_realty_privacy_policy', (req, res) => {
+    res.render('harmony_gates_realty_privacy_policy', { title: 'harmony_gates_realty_privacy_policy' });
 });
 
 router.get('/blog', (req, res) => {

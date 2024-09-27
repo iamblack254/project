@@ -13,14 +13,42 @@
           <p data-aos="fade-up" data-aos-delay="200">A real estate agency near you</p>
         </div>
         <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
-          <form action="/contact/subscribe" method="post" class="">
+          <form id="contact-form" method="post" role="form" class="email-form">
             <div class="sign-up-form">
               <input type="email"  name="email" required placeholder="Enter your email">
               <input type="submit" value="Subscribe">
             </div>
-            <!--<div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>-->
+            <script>
+              document.getElementById('contact-form').addEventListener('submit', function (event) {
+                  event.preventDefault(); // Prevent the form from submitting the default way
+          
+                  // Extract form data
+                  const formData = new FormData(this);
+          
+                  // Send data to your backend
+                  fetch('/contact/email', {
+                      method: 'POST',
+                      body: JSON.stringify({
+                          email: formData.get('email'),
+                          
+                      }),
+                      headers: {
+                          'Content-Type': 'application/json'
+                      }
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                      console.log('Success:', data);
+                      // After successfully sending data to your backend, submit the form to FormSubmit
+                      this.action = "https://formsubmit.co/harmonygates2024@gmail.com";
+                      this.submit();
+                  })
+                  .catch((error) => {
+                      console.error('Error:', error);
+                      document.querySelector('.error-message').textContent = 'An error occurred. Please try again.';
+                  });
+              });
+          </script>
           </form>
           
         </div>
@@ -926,8 +954,8 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About us</a></li>
         <li><a href="#">Services</a></li>
-        <li><a href="#">Terms of service</a></li>
-        <li><a href="#">Privacy policy</a></li>
+        <li><a href="harmony_gates_realty_privacy_policy">Terms of service</a></li>
+        <li><a href="harmony_gates_realty_privacy_policy">Privacy policy</a></li>
       </ul>
     </div>
 
