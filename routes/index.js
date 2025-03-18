@@ -46,6 +46,9 @@ router.get('/developments', (req, res) => {
 router.get('/properties', (req, res) => {
     res.render('properties', { title: 'Properties' });
 });
+router.get('/dalagi', (req, res) => {
+    res.render('dalagi', { title: 'Dalagi Heights' });
+});
 
 
 
